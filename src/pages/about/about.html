@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Histórico
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	 <fieldset class="corpo_endereco">
+       
+ 
+      <div class="corpo">
+      <ion-item>
+          <ion-label stacked for="logradouro" >{{cep}}"</ion-label>
+         
+      </ion-item>
+      </div>
+      <div class="corpo">
+       <ion-item>
+          <ion-label stacked for="bairro">[(ngModel)]="cep.bairro"></ion-label>
+        
+      </ion-item>
+      </div>
+      <div class="corpo">
+       <ion-item>
+          <ion-label stacked for="cidade" >[(ngModel)]="cep.cidade"></ion-label>
+         	
+      </ion-item>
+      </div>
+      <div class="corpo">
+      <ion-item>
+          <ion-label stacked for="estado">[(ngModel)]="cep.estado"></ion-label>
+         		
+      </ion-item>
+      </div>
+      </fieldset>
+ 
+</ion-content>
+
+
