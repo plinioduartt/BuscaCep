@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { classeCep, HistoricoProvider } from '../../providers/historico/historico';
-
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the HistoricoPage page.
  *
@@ -22,7 +22,8 @@ export class HistoricoPage {
   	public navCtrl: NavController,
   	 public navParams: NavParams, 
   	 private historicoProvider: HistoricoProvider,
-     private toast: ToastController
+     private toast: ToastController,
+     public alertCtrl: AlertController
   	 ) {
 		console.log("HistoricoPage carregou");
 
@@ -58,9 +59,34 @@ export class HistoricoPage {
              })
    }
 
-   ionViewDidLoad() {
-    return this.getAllHistoricos() 
-}
+ //MÉTODO PARA CONFIRMAÇÃO DE REMOÇÃO DOS REGISTROS DA TABELA 
+   showConfirm(id: number) {
+    let confirm = this.alertCtrl.create({
+      title: 'Confirmação',
+      message: 'Deseja realmente excluir este endereço?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Excluir',
+          handler: () => {
+            this.removeCepId(id)
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+  
+
+   
+  
+
 
 
 
