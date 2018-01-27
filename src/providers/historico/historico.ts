@@ -46,6 +46,18 @@ export class HistoricoProvider {
   		.catch((e) => console.error(e));
   }
 
+//MÉTODO DE EXCLUIR REGISTROS POR ID
+  public removeId(id: number){
+    return this.dbProvider.getDB()
+      .then((db: SQLiteObject) => {
+        let sql = 'delete from historico where id = ?';
+        let data = [id];
+        return db.executeSql(sql, data)
+       
+
+      })
+      .catch((e) => console.error(e));
+  }
 //MÉTODO DE SELECT - GET REGISTROS
 
      public get(){
@@ -80,6 +92,7 @@ export class HistoricoProvider {
 }
 
 export class classeCep{
+  id:number;
 	cep: string;
 	logradouro: string;
 	numero: string;

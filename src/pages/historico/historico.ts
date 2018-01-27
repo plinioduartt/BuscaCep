@@ -29,17 +29,16 @@ export class HistoricoPage {
 		this.getAllHistoricos();
   }
 
-
+//MÉTODO PARA BUSCAR TODOS OS REGISTROS NA TABELA "Hhistorico" E ATUALIZAR A PÁGINA DE HISTÓRICOS
   getAllHistoricos(){
-  	this.historicoProvider.get()
-  		.then((result: any) => {
-			  
-			  this.enderecos = result;
-			  console.log("getAllHistoricos", "Teste");
-			  console.log(this.enderecos);
-  		});
+  	return this.historicoProvider.get()
+  		     .then((result: any) => {
+			      this.enderecos = result;
+           	    console.log("getAllHistoricos", "Teste");
+          		  console.log(this.enderecos);
+             		});
   }
-
+//MÉTODO PARA EXCLUIR TODOS OS REGISTROS DA TABELA "historico"
    removeHistoricos(){
   	this.historicoProvider.remove()
  	.then(() => {
@@ -48,6 +47,21 @@ export class HistoricoPage {
     		
   	})
    }
+//CHAMANDO MÉTODO DE REMOVER CEP POR ID NA PAGE HISTÓRICO.TS
+   removeCepId(id:number){
+     this.historicoProvider.removeId(id)
+         .then(() =>{
+          return this.getAllHistoricos()
+          })
+            .then(() =>{
+                this.toast.create({message: 'Histórico removido.', duration: 3000, position: 'botton'}).present();
+             })
+   }
+
+   ionViewDidLoad() {
+    return this.getAllHistoricos() 
+}
+
 
 
 }
