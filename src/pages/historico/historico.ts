@@ -60,7 +60,7 @@ export class HistoricoPage {
    }
 
  //MÉTODO PARA CONFIRMAÇÃO DE REMOÇÃO DOS REGISTROS DA TABELA 
-   showConfirm(id: number) {
+   showConfirmRemoveItem(id: number) {
     let confirm = this.alertCtrl.create({
       title: 'Confirmação',
       message: 'Deseja realmente excluir este endereço?',
@@ -75,6 +75,30 @@ export class HistoricoPage {
           text: 'Excluir',
           handler: () => {
             this.removeCepId(id)
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
+  //MÉTODO PARA CONFIRMAÇÃO DE EXCLUSÃO DE TODOS OS REGISTROS DA TABELA "BOTÃO LIMPAR HISTÓRICO"
+  showConfirmRemoveAll() {
+    let confirm = this.alertCtrl.create({
+      title: 'Confirmação',
+      message: 'Deseja realmente excluir todos os registros?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Excluir',
+          handler: () => {
+            this.removeHistoricos()
             console.log('Agree clicked');
           }
         }

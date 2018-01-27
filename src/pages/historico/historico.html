@@ -16,7 +16,7 @@
 <ion-content padding>
 	  <div>
       <button class="btnatualizar" ion-button (click)="getAllHistoricos()">Atualizar</button>
-      <button class="btnlimpar" style="float:right" ion-button (click)="removeHistoricos()">Limpar histórico</button>
+      <button class="btnlimpar" style="float:right" ion-button (click)="showConfirmRemoveAll()">Limpar histórico</button>
       </div>
       <br>
 
@@ -50,7 +50,7 @@
             {{historico.estado}}
         
         </div>
-            <button ion-button style="float: right" (click)="showConfirm(historico.id)">Excluir</button>
+            <button ion-button style="float: right" (click)="showConfirmRemoveItem(historico.id)">Excluir</button>
       </ion-card-content>
       </ion-card>
 
