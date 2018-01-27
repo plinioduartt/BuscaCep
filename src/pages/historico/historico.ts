@@ -21,7 +21,8 @@ export class HistoricoPage {
   constructor(
   	public navCtrl: NavController,
   	 public navParams: NavParams, 
-  	 private historicoProvider: HistoricoProvider
+  	 private historicoProvider: HistoricoProvider,
+     private toast: ToastController
   	 ) {
 		console.log("HistoricoPage carregou");
 
@@ -43,7 +44,7 @@ export class HistoricoPage {
   	this.historicoProvider.remove()
  	.then(() => {
  		this.enderecos = new Array<classeCep>();
-  		// this.toast.create({message: 'Histórico removido.', duration: 3000, position: 'botton'}).present();
+  		 this.toast.create({message: 'Histórico removido.', duration: 3000, position: 'botton'}).present();
     		
   	})
    }

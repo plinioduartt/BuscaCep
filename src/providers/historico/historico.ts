@@ -35,7 +35,7 @@ export class HistoricoProvider {
    public remove(){
   	return this.dbProvider.getDB()
   		.then((db: SQLiteObject) => {
-  			let sql = 'delete * from historico';
+  			let sql = 'delete from historico';
   			
 
 

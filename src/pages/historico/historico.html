@@ -7,20 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-     <div>
-      <button ion-button (click)="getAllHistoricos()">Atualizar</button>
-      </div>
-      <div>
-      <button ion-button (click)="removeHistoricos()">Limpar histórico</button>
-      </div>
-      <br>
+    <ion-title>Histórico</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-	<div><h1>Histórico</h1></div>
+	  <div>
+      <button class="btnatualizar" ion-button (click)="getAllHistoricos()">Atualizar</button>
+      <button class="btnlimpar" style="float:right" ion-button (click)="removeHistoricos()">Limpar histórico</button>
+      </div>
+      <br>
 
     
       <ion-card *ngFor="let historico of enderecos" >
