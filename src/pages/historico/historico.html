@@ -5,42 +5,42 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Histórico</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content class="bg-fundo" padding >
+
+
+<!--CRIANDO ION-CARD PARA OS BOTÕES QUE CHAMAM OS MÉTODOS DE ATUALIZAR E DE LIMPAR O HISTÓRICO -->  
 	  <ion-card>
     <div style="padding: 10px">
           <button class="btnatualizar" ion-button (click)="getAllHistoricos()">Atualizar</button>
           <button class="btnlimpar" style="float:right" ion-button (click)="showConfirmRemoveAll()">Limpar histórico</button>
     </div>
-    </ion-card> 
-     <br>
+    </ion-card><br>  
 
-    
-      <ion-card *ngFor="let historico of enderecos" >
-      <ion-card-content style="font-size: 16px">
-      <div>
+
+<!--CRIANDO ION-CARD PARA EXIBIR OS REGISTROS DA TABELA COM OS ENDEREÇOS -->    
+    <ion-card *ngFor="let historico of enderecos" >
+    <ion-card-content style="font-size: 16px">
+        <div>
             {{historico.cep}}
-      </div>
-      <div >        
+        </div>
+        <div>        
             {{historico.logradouro}}   
-      </div>
-      <div> 
+        </div>
+        <div> 
             {{historico.bairro}}
-      </div>
-      <div>   
+        </div>
+        <div>   
             {{historico.cidade}}
-      </div>
-      <div>
+        </div>
+        <div>
             {{historico.estado}}
-      </div>
-            <button ion-button style="float: right; border-radius: 8px" (click)="showConfirmRemoveItem(historico.id)">Excluir</button>
+        </div>
+<!--BOTÃO QUE CHAMA O MÉTODO DE EXCLUIR ENDEREÇOS POR ID -->  
+                <button ion-button style="float: right; border-radius: 8px" (click)="showConfirmRemoveItem(historico.id)">Excluir</button>
       </ion-card-content>
       </ion-card>
 

@@ -10,11 +10,13 @@ import 'rxjs/add/operator/toPromise';
 */
 @Injectable()
 export class CepProvider {
-
+//DECLARANDO O CONSTRUTOR NECESSÁRIO PARA FAZER O CONSUMO DO WEBSERVICE
   constructor(public http: HttpClient) {
     console.log('Hello CepProvider Provider');
   }
 
+
+//DECLARANDO MÉTODO PARA A BUSCA DA API
   	buscar(cep:string){
   		return this.http.get(`https://viacep.com.br/ws/${cep}/json/`)
               .toPromise()
@@ -23,6 +25,8 @@ export class CepProvider {
               });
  	 }
 
+    
+//CONVERSÃO DA VARIÁVEL DA CLASSECEP PARA QUE POSSA OCORRER O CONSUMO DA API DE ACORDO COM CADA CAMPO (CEP, LOGRADOURO, BAIRRO...)
  	 private converterRespostaParaCep(cepNaResposta):classeCep{
  	 	let cep = new classeCep();
  	 	cep.cep = cepNaResposta.cep;

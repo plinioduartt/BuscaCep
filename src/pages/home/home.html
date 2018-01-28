@@ -4,19 +4,15 @@
     <ion-title style="text-align: center">Encontrar endereços</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content class="imagem-de-fundo" padding>
   <ion-list>
-      <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
       <ion-card>
           <ion-label class="inputcep" stacked><strong>INFORME O CEP</strong></ion-label>
-          <ion-input type="text" placeholder="00000-000" id="cep" [(ngModel)]="cep.cep"></ion-input>
-      
-      <br>
-      <div style="float: center">
-      <button ion-button (click)="buscar()">Buscar Endereço</button>
-      </div>
-       <br> 
+          <ion-input type="number" placeholder="00000-000" id="cep" [(ngModel)]="cep.cep"></ion-input><br>
+          <div style="float: center">
+             <button ion-button (click)="buscar()">Buscar Endereço</button>
+          </div> <br> 
       </ion-card>
   </ion-list>
 </ion-content>
