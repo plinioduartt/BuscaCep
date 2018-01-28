@@ -49,7 +49,11 @@ export class HomePage {
     showAlertBuscar() {
     let alert = this.alertCtrl.create({
       title: 'Endereço',
-      message: `${this.cep.cep} <br> ${this.cep.logradouro} <br> ${this.cep.bairro} <br> ${this.cep.cidade} <br> ${this.cep.estado}`,
+      message: `<div class="exibiralert"><ion-label stacked for="logradouro" ><strong>Cep:</strong></ion-label><br>${this.cep.cep} <br>
+      <ion-label stacked for="logradouro" ><strong>Logradouro:</strong></ion-label><br>${this.cep.logradouro} <br>
+      <ion-label stacked for="logradouro" ><strong>Bairro:</strong></ion-label><br>${this.cep.bairro} <br>
+      <ion-label stacked for="logradouro" ><strong>Cidade:</strong></ion-label><br>${this.cep.cidade} <br>
+      <ion-label stacked for="logradouro" ><strong>Estado:</strong></ion-label><br>${this.cep.estado}</div>`,
       buttons: ['OK']
     });
     alert.present();

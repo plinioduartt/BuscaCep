@@ -1,3 +1,45 @@
 page-home {
+.toolbar-title.toolbar-title-md {
+    font-size: 25px;
+}
+
+ion-label.label.label-md {
+    text-align: center;
+    font-size: 18px;
+}
+.button-md {
+    border-radius: 8px;
+   	font-size: 20px;
+    margin-left: 25px;
+    height: 50px;
+   
+}
+input.text-input-md {
+    text-align: center;
+}
+input.text-input.text-input-md {
+    background-color: #ffffff;
+    font-size: 18px;
+    margin: 4px;
+    margin-left: 5px;
+
+    
+}
+div#alert-msg-1 {
+    font-size: 18px;
+}
+ion-input#cep {
+    background-color: #eaeaea;
+    padding: 0px;
+    margin-top: 5px;
+}
+ion-card.card.card-md {
+    padding: 10px;
+}
+.exibiralert {
+    font-size: 17px;
+}
+
 
 }
+

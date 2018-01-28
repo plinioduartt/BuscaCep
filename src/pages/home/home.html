@@ -1,50 +1,23 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title style="text-align: center">App CEP</ion-title>
+    <ion-title style="text-align: center">Encontrar endereços</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-      <br>
-      <ion-item>
-          <ion-label stacked>INFORME O CEP</ion-label>
+      <br><br><br><br><br><br>
+      <ion-card>
+          <ion-label class="inputcep" stacked>INFORME O CEP</ion-label>
           <ion-input type="text" placeholder="00000-000" id="cep" [(ngModel)]="cep.cep"></ion-input>
-      </ion-item>
+      
       <br>
-      <div style="float: center; margin-left:80px ">
+      <div style="float: center">
       <button ion-button (click)="buscar()">Buscar Endereço</button>
       </div>
        <br> 
-       <fieldset class="corpo_endereco">
-       
- 
-      <div class="corpo">
-      <ion-item>
-          <ion-label stacked for="logradouro" >Logradouro</ion-label>
-          <ion-input type="text" placeholder="Rua" id="logradouro"  [(ngModel)]="cep.logradouro"></ion-input>
-      </ion-item>
-      </div>
-      <div class="corpo">
-       <ion-item>
-          <ion-label stacked for="bairro">Bairro</ion-label>
-          <ion-input type="text" placeholder="Bairro" id="bairro" [(ngModel)]="cep.bairro"></ion-input>
-      </ion-item>
-      </div>
-      <div class="corpo">
-       <ion-item>
-          <ion-label stacked for="cidade" >Cidade</ion-label>
-          <ion-input type="text" placeholder="Cidade" id="cidade" [(ngModel)]="cep.cidade"></ion-input>
-      </ion-item>
-      </div>
-      <div class="corpo">
-      <ion-item>
-          <ion-label stacked for="estado">Estado</ion-label>
-          <ion-input type="text" placeholder="Estado" id="estado" [(ngModel)]="cep.estado"></ion-input>
-      </ion-item>
-      </div>
-      </fieldset>
+      </ion-card>
   </ion-list>
 </ion-content>
 
