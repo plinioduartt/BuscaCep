@@ -10,7 +10,7 @@ ion-label.label.label-md {
 .button-md {
     border-radius: 8px;
    	font-size: 20px;
-    margin-left: 25px;
+    margin-left: 35px;
     height: 50px;
    
 }
@@ -20,18 +20,16 @@ input.text-input-md {
 input.text-input.text-input-md {
     background-color: #ffffff;
     font-size: 18px;
-    margin: 4px;
-    margin-left: 5px;
-
-    
+    border-radius: 8px;
 }
+
 div#alert-msg-1 {
     font-size: 18px;
 }
 ion-input#cep {
-    background-color: #eaeaea;
-    padding: 0px;
+    background-color: #ecebe7;
     margin-top: 5px;
+    border-radius: 8px;
 }
 ion-card.card.card-md {
     padding: 10px;
@@ -40,6 +38,11 @@ ion-card.card.card-md {
     font-size: 17px;
 }
 
+.imagem-de-fundo{
+    background: url("../assets/imgs/fundo.jpg");
+    background-repeat: no-repeat;
+    
+}
 
 }
 
